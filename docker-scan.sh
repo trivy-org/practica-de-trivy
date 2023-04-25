@@ -35,7 +35,7 @@ for docker_build_context_relative_path in docker-builder/registry-repos/*; do #
 
         echo "La imagen Docker cumple con la política de seguridad!"
         echo "Woo hoo!"
-        echo "Empezado el escaneo de la nueva imagen Docker
+        echo "Empezado el escaneo de la nueva imagen Docker"
         continue
     elif [[ "$vuln_result_code" -eq 2 ]]; then
         echo "¡Esta imagen Docker contiene una vulnerabilidad!"
