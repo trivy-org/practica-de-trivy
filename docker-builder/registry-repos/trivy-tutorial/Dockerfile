@@ -1,11 +1,10 @@
-FROM debian:stretch-20210208-slim
+FROM debian
 
 ENV DEBIAN_FRONTEND noninteractive
 
-# +--------------------+
-# SYSTEM-LEVEL PACKAGE MANAGER INSTALLATIONS
-# (and misc dependencies) 
-# +--------------------+
+# +---------------------------------------------------------+
+# INSTALACIÓN A NIVEL DE SISTEMA MEDIANTE GESTOR DE PAQUETES
+# +---------------------------------------------------------+
 
 RUN apt-get update -y &&\
     apt-get dist-upgrade -y &&\
@@ -24,8 +23,8 @@ RUN apt-get update -y &&\
 
 
 # +--------------------+
-# MAKE INSTALLATION (shellshock)
-# (system-level installation WITHOUT package manager)
+# INSTLACIÓN CON MAKE (Shellshock)
+# (instalacióin a nivel de sistema SIN gestor de paquetes)
 # +--------------------+
 
 #RUN wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz && \
@@ -35,8 +34,8 @@ RUN apt-get update -y &&\
 #    make && \
 #    make install
 
-# +--------------------+
-# APPLICATION-LEVEL PACKAGE MANAGER INSTALLATION (regex DoS)
-# +--------------------+
+# +------------------------------------------------------------------------+
+# INSTALACIÓN A NIVEL DE APLICACIÓN MEDIANTE GESTOR DE PAQUETES (regex DoS)
+# +------------------------------------------------------------------------+
 
 #COPY lang_dependencies/Pipfile.lock /app/Pipfile.lock
