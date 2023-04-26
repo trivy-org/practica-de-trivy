@@ -14,11 +14,7 @@ for docker_build_context_relative_path in docker-builder/registry-repos/*; do
 
     docker build --no-cache --tag "${local_image_name}" "${docker_build_context_absolute_path}" #
 
-
-
     trivy image --reset #
-
-
 
     trivy image --no-progress --scanners vuln --severity CRITICAL,HIGH,MEDIUM --exit-code 2 --ignore-unfixed "${local_image_name}" #
 
