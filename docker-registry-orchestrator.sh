@@ -140,4 +140,3 @@ for docker_build_context_relative_path in docker-builder/registry-repos/*; do #
         commit_and_push_signature "$signature_absolute_path"
     fi
 done
-

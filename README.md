@@ -1,1 +1,1 @@
-Archivos necesarios para la praćtica de Trivy
+Archivos necesarios para la praćtica de Trivy.
