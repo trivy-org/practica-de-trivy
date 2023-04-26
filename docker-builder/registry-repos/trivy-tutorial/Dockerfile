@@ -8,9 +8,9 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -y &&\
     apt-get dist-upgrade -y &&\
-    apt-get install -y apache2 \
-        wget \
-        build-essential &&\
+#    apt-get install -y apache2 \
+#        wget \
+#        build-essential &&\
     apt-get autoremove &&\
     apt-get clean &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -23,7 +23,7 @@ RUN apt-get update -y &&\
 
 
 # +--------------------+
-# INSTLACIÓN CON MAKE (Shellshock)
+# INSTALACIÓN CON MAKE (Shellshock)
 # (instalacióin a nivel de sistema SIN gestor de paquetes)
 # +--------------------+
 

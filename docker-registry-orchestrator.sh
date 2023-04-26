@@ -39,12 +39,10 @@ commit_and_push_signature() {
 # +--------------------+
 
 git config user.name "Security Bot" # 
-
-
 git config user.email "<>"
 git pull origin main
 
-for docker_build_context_relative_path in docker-builder/registry-repos/*; do # 
+for docker_build_context_relative_path in docker-builder/registry-repos/*; do  
 
 
     [[ ! -d "$docker_build_context_relative_path" ]] && continue
