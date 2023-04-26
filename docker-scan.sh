@@ -4,16 +4,11 @@
 # LÓGICA PRINCIPAL
 # +--------------------+
 
-for docker_build_context_relative_path in docker-builder/registry-repos/*; do #
-
-
-    [[ ! -d "$docker_build_context_relative_path" ]] && continue #
-
-
+for docker_build_context_relative_path in docker-builder/registry-repos/*; do
+    
+   [[ ! -d "$docker_build_context_relative_path" ]] && continue
 
     docker_build_context_absolute_path=$(realpath "$docker_build_context_relative_path") #
-
-
 
     local_image_name=test-image
 
@@ -25,7 +20,7 @@ for docker_build_context_relative_path in docker-builder/registry-repos/*; do #
 
 
 
-    trivy image --no-progress --security-checks vuln --severity CRITICAL,HIGH,MEDIUM --exit-code 2 --ignore-unfixed "${local_image_name}" #
+    trivy image --no-progress --scanners vuln --severity CRITICAL,HIGH,MEDIUM --exit-code 2 --ignore-unfixed "${local_image_name}" #
 
 
     vuln_result_code="$?"
@@ -41,8 +36,8 @@ for docker_build_context_relative_path in docker-builder/registry-repos/*; do #
         echo "¡Esta imagen Docker contiene una vulnerabilidad!"
         echo "¡Soluciónala por favor!"
         echo "PATH: $docker_build_context_absolute_path"
-        exit 1 #(13)
-    else #(14)
+        exit 1 
+    else 
         echo "¡Ha habido un error inesperado!"
         echo "Por favor, contacte con el equipo de seguridad"
         exit 1
