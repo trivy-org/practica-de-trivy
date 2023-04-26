@@ -103,7 +103,7 @@ for docker_build_context_relative_path in docker-builder/registry-repos/*; do #
 
 
         echo "La firma remote NO coincidie con la de la última imagen que se construyó"
-        echo "¡Puede que se haya producido una modificación maliciosa en Docker Hub!
+        echo "¡Puede que se haya producido una modificación maliciosa en Docker Hub!"
 
         echo "Firma remota: $remote_signature"
         echo "Firma del último build: $previous_build_signature"
