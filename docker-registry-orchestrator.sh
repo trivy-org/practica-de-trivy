@@ -111,7 +111,7 @@ for docker_build_context_relative_path in docker-builder/registry-repos/*; do
 
         trivy image --reset
 
-        trivy image --no-progress --severity CRITICAL,HIGH,MEDIUM --ignore-unfixed "${remote_image_name}"
+        trivy image --no-progress --security-checks vulns --severity CRITICAL,HIGH,MEDIUM --ignore-unfixed "${remote_image_name}"
 
         echo "Buscando diferencias entre las imágenes de Docker" # (13)
         container-diff diff \
