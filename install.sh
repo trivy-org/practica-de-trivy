@@ -19,10 +19,10 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
-distro="bullseye"
+#distro="bullseye"
 
 ## Deduce the current distro name
-#distro="$(lsb_release -sc)"
+distro="$(lsb_release -sc)"
 #if [[ "$distro" -eq "kali-rolling" ]]; then
     # kali 2021.1.0 is based on debian buster
     # We set the distro to make trivy install correctly
