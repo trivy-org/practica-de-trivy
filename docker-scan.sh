@@ -25,7 +25,7 @@ for docker_build_context_relative_path in docker-builder/registry-repos/*; do #
 
 
 
-    trivy image --no-progress --security-checks vuln --severity CRITICAL,HIGH,MEDIUM --exit-code 2 --ignore-unfixed "${local_image_name}" #
+    trivy image --no-progress --scanners vuln --severity CRITICAL,HIGH,MEDIUM --exit-code 2 --ignore-unfixed "${local_image_name}" #
 
 
     vuln_result_code="$?"
