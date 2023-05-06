@@ -23,11 +23,11 @@ RUN apt-get update -y &&\
 
 #RUN apt-get update &&  apt-get install -y python3-pip
 
-#RUN wget http://snapshot.debian.org/archive/debian/20130319T033933Z/pool/main/o/openssl/libssl1.0.0_1.0.1e-2_amd64.deb -O /tmp/libssl1.0.0_1.0.1e-2_amd64.deb && \
-#    dpkg --ignore-depends=multiarch-support -i /tmp/libssl1.0.0_1.0.1e-2_amd64.deb
+RUN wget http://snapshot.debian.org/archive/debian/20130319T033933Z/pool/main/o/openssl/libssl1.0.0_1.0.1e-2_amd64.deb -O /tmp/libssl1.0.0_1.0.1e-2_amd64.deb && \
+    dpkg --ignore-depends=multiarch-support -i /tmp/libssl1.0.0_1.0.1e-2_amd64.deb
 
-#RUN wget http://snapshot.debian.org/archive/debian/20130319T033933Z/pool/main/o/openssl/openssl_1.0.1e-2_amd64.deb -O /tmp/openssl_1.0.1e-2_amd64.deb &&\
-#    dpkg --ignore-depends=multiarch-support -i /tmp/openssl_1.0.1e-2_amd64.deb
+RUN wget http://snapshot.debian.org/archive/debian/20130319T033933Z/pool/main/o/openssl/openssl_1.0.1e-2_amd64.deb -O /tmp/openssl_1.0.1e-2_amd64.deb &&\
+    dpkg --ignore-depends=multiarch-support -i /tmp/openssl_1.0.1e-2_amd64.deb
 
 
 # +--------------------+
@@ -35,12 +35,12 @@ RUN apt-get update -y &&\
 # (instalacióin a nivel de sistema SIN gestor de paquetes)
 # +--------------------+
 
-#RUN wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz && \
-#    tar zxvf bash-4.3.tar.gz && \
-#    cd bash-4.3 && \
-#    ./configure && \
-#    make && \
-#    make install
+RUN wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz && \
+    tar zxvf bash-4.3.tar.gz && \
+    cd bash-4.3 && \
+    ./configure && \
+    make && \
+    make install
 
 # +------------------------------------------------------------------------+
 # INSTALACIÓN A NIVEL DE APLICACIÓN MEDIANTE GESTOR DE PAQUETES (regex DoS)
