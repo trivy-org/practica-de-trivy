@@ -18,7 +18,7 @@ RUN apt-get update -y &&\
     apt-get clean &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN wget https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tgz && tar xzf Python-3.11.1.tgz && cd Python-3.11.1 && ./configure --enable-optimizations  && make altinstall 
+#RUN wget https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tgz && tar xzf Python-3.11.1.tgz && cd Python-3.11.1 && ./configure --enable-optimizations  && make altinstall 
 
 RUN apt-get update &&  apt-get install -y python3-pip
 
