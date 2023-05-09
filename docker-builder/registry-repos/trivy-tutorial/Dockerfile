@@ -11,10 +11,11 @@ RUN apt-get update -y &&\
     apt-get dist-upgrade -y &&\
     apt-get install -y apache2 \
         wget \
+	python3-pip\
         build-essential \
-	libncursesw5-dev libssl-dev \
-	libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev &&\
-	#python3-pip &&\
+#	libncursesw5-dev libssl-dev \
+#	libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev \
+#	python3-pip &&\
     apt-get autoremove &&\
     apt-get clean &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -35,12 +36,12 @@ RUN apt-get update -y &&\
 # (instalacióin a nivel de sistema SIN gestor de paquetes)
 # +--------------------+
 
-RUN wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz && \
-    tar zxvf bash-4.3.tar.gz && \
-    cd bash-4.3 && \
-    ./configure && \
-    make && \
-    make install
+#RUN wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz && \
+#    tar zxvf bash-4.3.tar.gz && \
+#    cd bash-4.3 && \
+#    ./configure && \
+#    make && \
+#    make install
 
 # +------------------------------------------------------------------------+
 # INSTALACIÓN A NIVEL DE APLICACIÓN MEDIANTE GESTOR DE PAQUETES (regex DoS)
