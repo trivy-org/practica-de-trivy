@@ -4,31 +4,9 @@
 # GENERAL
 # +--------------------+
 
-## Installs dependencies for Trivy course
-
-## Tested on (3/2021):
-## Kali Linux 2021.1.0
-## Ubuntu 20.04 (we'll use this script on an Ubuntu build server later in the course)
-
-# NOTE: This script is NOT guaranteed to work into the future
-# (packages can be removed from package repositories, etc.)
-
-# +--------------------+
-# MAIN INSTALLATION LOGIC
-# +--------------------+
-
-export DEBIAN_FRONTEND=noninteractive
-
-distro="bullseye"
 
 ## Deduce the current distro name
-#distro="$(lsb_release -sc)"
-#if [[ "$distro" -eq "kali-rolling" ]]; then
-    # kali 2021.1.0 is based on debian buster
-    # We set the distro to make trivy install correctly
-#    distro="buster"
-#fi
-
+distro="$(lsb_release -sc)"
 ## Install Trivy (and misc dependencies for Trivy)
 ## https://github.com/aquasecurity/trivy
 sudo apt-get -y update &&\
