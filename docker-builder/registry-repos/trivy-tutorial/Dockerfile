@@ -11,17 +11,10 @@ RUN apt-get update -y &&\
     apt-get dist-upgrade -y &&\
     apt-get install -y apache2 \
         wget \
-<<<<<<< HEAD
 #	libncursesw5-dev libssl-dev \
 #	libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev \
 	python3-pip\
         build-essential &&\
-=======
-        build-essential \
-	libncursesw5-dev libssl-dev \
-	libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev &&\
-	#python3-pip &&\
->>>>>>> dce5883939c4616c0d3b8cc45b353d6c5cd03caa
     apt-get autoremove &&\
     apt-get clean &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -56,7 +49,3 @@ RUN wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz && \
 #COPY lang_dependencies/Pipfile.lock /app/Pipfile.lock
 
 #RUN pip3 install httplib2==0.18.1 
-<<<<<<< HEAD
-
-=======
->>>>>>> dce5883939c4616c0d3b8cc45b353d6c5cd03caa
