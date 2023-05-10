@@ -39,12 +39,10 @@ commit_and_push_signature() {
 # +--------------------+
 
 git config user.name "Security Bot" # 
-
-
 git config user.email "<>"
 git pull origin main
 
-for docker_build_context_relative_path in docker-builder/registry-repos/*; do # 
+for docker_build_context_relative_path in docker-builder/registry-repos/*; do  
 
 
     [[ ! -d "$docker_build_context_relative_path" ]] && continue
@@ -113,7 +111,7 @@ for docker_build_context_relative_path in docker-builder/registry-repos/*; do #
 
         trivy image --reset
 
-        trivy image --no-progress --severity CRITICAL,HIGH,MEDIUM --ignore-unfixed "${remote_image_name}"
+        trivy image --no-progress --scanners vuln --severity CRITICAL,HIGH,MEDIUM --ignore-unfixed "${remote_image_name}"
 
         echo "Buscando diferencias entre las imágenes de Docker" # (13)
         container-diff diff \
