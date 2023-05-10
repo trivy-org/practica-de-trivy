@@ -12,10 +12,9 @@ RUN apt-get update -y &&\
     apt-get install -y apache2 \
         wget \
 	python3-pip\
-        build-essential \
 #	libncursesw5-dev libssl-dev \
 #	libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev \
-#	python3-pip &&\
+        build-essential &&\
     apt-get autoremove &&\
     apt-get clean &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
