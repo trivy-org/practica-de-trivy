@@ -22,13 +22,13 @@ RUN apt-get update -y &&\
 
 #RUN wget https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tgz && tar xzf Python-3.11.1.tgz && cd Python-3.11.1 && ./configure --enable-optimizations  && make altinstall 
 
-#RUN apt-get update &&  apt-get install -y python3-pip
+RUN apt-get update &&  apt-get install -y python3-pip
 
-#RUN wget http://snapshot.debian.org/archive/debian/20130319T033933Z/pool/main/o/openssl/libssl1.0.0_1.0.1e-2_amd64.deb -O /tmp/libssl1.0.0_1.0.1e-2_amd64.deb && \
-#    dpkg --ignore-depends=multiarch-support -i /tmp/libssl1.0.0_1.0.1e-2_amd64.deb
+RUN wget http://snapshot.debian.org/archive/debian/20130319T033933Z/pool/main/o/openssl/libssl1.0.0_1.0.1e-2_amd64.deb -O /tmp/libssl1.0.0_1.0.1e-2_amd64.deb && \
+    dpkg --ignore-depends=multiarch-support -i /tmp/libssl1.0.0_1.0.1e-2_amd64.deb
 
-#RUN wget http://snapshot.debian.org/archive/debian/20130319T033933Z/pool/main/o/openssl/openssl_1.0.1e-2_amd64.deb -O /tmp/openssl_1.0.1e-2_amd64.deb &&\
-#    dpkg --ignore-depends=multiarch-support -i /tmp/openssl_1.0.1e-2_amd64.deb
+RUN wget http://snapshot.debian.org/archive/debian/20130319T033933Z/pool/main/o/openssl/openssl_1.0.1e-2_amd64.deb -O /tmp/openssl_1.0.1e-2_amd64.deb &&\
+    dpkg --ignore-depends=multiarch-support -i /tmp/openssl_1.0.1e-2_amd64.deb
 
 
 # +--------------------+
