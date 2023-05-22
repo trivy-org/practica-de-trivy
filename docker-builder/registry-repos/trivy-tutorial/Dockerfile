@@ -45,4 +45,3 @@ RUN apt-get update -y &&\
 #COPY lang_dependencies/Pipfile.lock /app/Pipfile.lock
 
 #RUN pip3 install httplib2==0.18.1
-# Comentario para borrar, sólo para hacer el push 
